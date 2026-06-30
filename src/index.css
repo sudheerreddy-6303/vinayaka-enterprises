@@ -191,6 +191,25 @@ a { text-decoration: none; }
   /* stacked on mobile: keep text readable over full photo */
   .band-overlay { background: rgba(255,255,255,0.86); }
 }
+
+/* split layout: clean text panel beside a crisp photo (no white wash) */
+.band-split { display: flex; min-height: 230px; height: 100%; }
+.band-text {
+  flex: 1 1 48%;
+  padding: 1.6rem;
+  display: flex; flex-direction: column; justify-content: center;
+  background: var(--cream);
+}
+.band-photo {
+  flex: 1 1 52%;
+  min-height: 230px;
+  background-size: cover;
+  background-position: center;
+}
+@media (max-width: 991px) {
+  .band-split { flex-direction: column; }
+  .band-photo { min-height: 190px; }
+}
 .band-img {
   background: linear-gradient(135deg, #d9dde2, #eef1f4);
   display: flex; align-items: center; justify-content: center;

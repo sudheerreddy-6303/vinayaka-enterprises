@@ -4,14 +4,14 @@ export default function MidBand() {
       <div className="container-fluid p-0">
         <div className="row g-0">
           {/* 3rd party manufacturing */}
-          <div
-            className="col-lg-4 band-card band-img position-relative"
-            style={{ backgroundImage: "url('/images/band-manufacturing.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
-          >
-            <div className="p-4 w-100 band-overlay">
-              <h4 className="mb-2">3RD PARTY<br />MANUFACTURING</h4>
-              <p className="mb-3">We offer professional 3rd Party Manufacturing services with your brand name.</p>
-              <a href="#" className="btn btn-outline-brand">KNOW MORE</a>
+          <div className="col-lg-4 band-card">
+            <div className="band-split">
+              <div className="band-text">
+                <h4 className="mb-2">3RD PARTY<br />MANUFACTURING</h4>
+                <p className="mb-3">We offer professional 3rd Party Manufacturing services with your brand name.</p>
+                <a href="#" className="btn btn-outline-brand">KNOW MORE</a>
+              </div>
+              <div className="band-photo" style={{ backgroundImage: "url('/images/band-manufacturing.jpg')" }}></div>
             </div>
           </div>
 
@@ -46,14 +46,14 @@ export default function MidBand() {
           </div>
 
           {/* Door to door */}
-          <div
-            className="col-lg-4 band-card band-img position-relative"
-            style={{ backgroundImage: "url('/images/band-delivery.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
-          >
-            <div className="p-4 w-100 band-overlay">
-              <h4 className="mb-2">DOOR TO DOOR<br />SERVICE</h4>
-              <p className="mb-3">We deliver happiness to your door.</p>
-              <a href="#" className="btn btn-outline-brand">KNOW MORE</a>
+          <div className="col-lg-4 band-card">
+            <div className="band-split">
+              <div className="band-text">
+                <h4 className="mb-2">DOOR TO DOOR<br />SERVICE</h4>
+                <p className="mb-3">We deliver happiness to your door.</p>
+                <a href="#" className="btn btn-outline-brand">KNOW MORE</a>
+              </div>
+              <div className="band-photo" style={{ backgroundImage: "url('/images/band-delivery.jpg')" }}></div>
             </div>
           </div>
         </div>
