@@ -24,3 +24,20 @@ Drop photos into `public/images/` and replace the placeholder `<div>` blocks
 
 ## Sections (in order)
 TopBar · Header(navbar) · Hero · TrustBar · Categories · MidBand · FeaturedProducts · Footer
+
+## Pages & routing (react-router-dom)
+The site now has multiple pages sharing the same top bar, navbar and footer:
+- /              Home (unchanged)
+- /about         About Us (company content)
+- /products      Our Products (category cards + all-products grid, same card style)
+- /services      Our Services
+- /manufacturing Manufacturing
+- /contact       Contact Us (details + form)
+
+Source: src/pages/* (page content), src/components/Layout.jsx (shared chrome),
+routes defined in src/App.jsx.
+
+Note for production static hosting (Render/Railway static, Netlify, etc.):
+add a catch-all rewrite so every path serves index.html (SPA fallback),
+e.g. Netlify `_redirects`:  /*  /index.html  200
+`npm run dev` and `npm run preview` already handle this automatically.

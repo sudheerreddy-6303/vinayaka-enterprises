@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const categories = [
   { name: "SKIN CARE", desc: "Face Wash, Cream, Serum & More", img: "cat-skincare.jpg" },
   { name: "HAIR CARE", desc: "Shampoo, Hair Oil, Conditioner & More", img: "cat-haircare.jpg" },
@@ -22,14 +24,14 @@ export default function Categories() {
                 <div className="cat-img"><img src={`/images/${c.img}`} alt={c.name} /></div>
                 <h5>{c.name}</h5>
                 <p>{c.desc}</p>
-                <a href="#" className="btn btn-brand-sm">SHOP NOW</a>
+                <Link to="/products" className="btn btn-brand-sm">SHOP NOW</Link>
               </div>
             </div>
           ))}
         </div>
 
         <div className="text-center mt-4">
-          <a href="#" className="btn btn-outline-brand">VIEW ALL PRODUCTS</a>
+          <Link to="/products" className="btn btn-outline-brand">VIEW ALL PRODUCTS</Link>
         </div>
       </div>
     </section>

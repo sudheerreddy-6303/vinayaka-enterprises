@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const products = [
   { name: "Herbal Face Wash", price: "₹299.00", img: "prod-facewash.jpg" },
@@ -55,7 +56,7 @@ export default function FeaturedProducts() {
         </div>
 
         <div className="text-center mt-4">
-          <a href="#" className="btn btn-outline-brand">VIEW ALL PRODUCTS</a>
+          <Link to="/products" className="btn btn-outline-brand">VIEW ALL PRODUCTS</Link>
         </div>
       </div>
     </section>

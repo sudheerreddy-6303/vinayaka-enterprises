@@ -1,23 +1,23 @@
-import TopBar from "./components/TopBar";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import TrustBar from "./components/TrustBar";
-import Categories from "./components/Categories";
-import MidBand from "./components/MidBand";
-import FeaturedProducts from "./components/FeaturedProducts";
-import Footer from "./components/Footer";
+import { Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Products from "./pages/Products";
+import Services from "./pages/Services";
+import Manufacturing from "./pages/Manufacturing";
+import Contact from "./pages/Contact";
 
 export default function App() {
   return (
-    <>
-      <TopBar />
-      <Header />
-      <Hero />
-      <TrustBar />
-      <Categories />
-      <MidBand />
-      <FeaturedProducts />
-      <Footer />
-    </>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="products" element={<Products />} />
+        <Route path="services" element={<Services />} />
+        <Route path="manufacturing" element={<Manufacturing />} />
+        <Route path="contact" element={<Contact />} />
+      </Route>
+    </Routes>
   );
 }
