@@ -20,6 +20,7 @@ function loadInitial() {
 
 export function CartProvider({ children }) {
   const [items, setItems] = useState(loadInitial); // { name, price, priceValue, img, qty }
+  const [notice, setNotice] = useState(null); // { id, text } shown by the toast
 
   // keep the cart saved so it survives page refreshes
   useEffect(() => {
@@ -49,6 +50,8 @@ export function CartProvider({ children }) {
         },
       ];
     });
+    // trigger the "Added to cart" popup
+    setNotice({ id: Date.now(), text: `${product.name} added to cart` });
   };
 
   const removeItem = (name) =>
@@ -66,7 +69,7 @@ export function CartProvider({ children }) {
 
   return (
     <CartContext.Provider
-      value={{ items, addToCart, removeItem, setQty, clearCart, count, total }}
+      value={{ items, addToCart, removeItem, setQty, clearCart, count, total, notice }}
     >
       {children}
     </CartContext.Provider>

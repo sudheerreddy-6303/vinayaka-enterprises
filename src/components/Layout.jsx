@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import TopBar from "./TopBar";
 import Header from "./Header";
 import Footer from "./Footer";
+import CartToast from "./CartToast";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -22,6 +23,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <CartToast />
     </>
   );
 }
