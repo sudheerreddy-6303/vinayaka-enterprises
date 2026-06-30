@@ -41,3 +41,10 @@ Note for production static hosting (Render/Railway static, Netlify, etc.):
 add a catch-all rewrite so every path serves index.html (SPA fallback),
 e.g. Netlify `_redirects`:  /*  /index.html  200
 `npm run dev` and `npm run preview` already handle this automatically.
+
+## Cart
+- Shared cart state: src/context/CartContext.jsx (wrapped in src/main.jsx)
+- ADD TO CART on the home carousel and /products add items; the navbar badge updates live
+- Cart icon is always visible on mobile (next to the hamburger) and on desktop
+- /cart page: change quantity, remove items, clear cart, order summary + Place Order
+- Cart is saved to localStorage, so it survives page refreshes

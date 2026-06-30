@@ -1,4 +1,5 @@
 import PageBanner from "../components/PageBanner";
+import { useCart } from "../context/CartContext";
 
 const categories = [
   { name: "SKIN CARE", desc: "Face Wash, Cream, Serum & More", img: "cat-skincare.jpg" },
@@ -25,6 +26,7 @@ const products = [
 ];
 
 export default function Products() {
+  const { addToCart } = useCart();
   return (
     <>
       <PageBanner title="Our Products" crumb="Products" />
@@ -61,7 +63,7 @@ export default function Products() {
                   <div className="prod-img"><img src={`/images/${p.img}`} alt={p.name} /></div>
                   <h6>{p.name}</h6>
                   <div className="price">{p.price}</div>
-                  <a href="#" className="btn btn-brand-sm w-100">ADD TO CART</a>
+                  <button className="btn btn-brand-sm w-100" onClick={() => addToCart(p)}>ADD TO CART</button>
                 </div>
               </div>
             ))}

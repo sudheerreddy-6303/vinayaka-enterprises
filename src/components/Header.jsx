@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
 function Logo() {
   return (
@@ -13,22 +14,30 @@ function Logo() {
 const linkClass = ({ isActive }) => "nav-link" + (isActive ? " active" : "");
 
 export default function Header() {
+  const { count } = useCart();
   return (
     <nav className="navbar navbar-expand-lg site-nav py-2">
       <div className="container">
         <Logo />
 
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNav"
-          aria-controls="mainNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+        {/* Mobile: cart + hamburger always visible */}
+        <div className="d-flex align-items-center gap-3 d-lg-none">
+          <Link to="/cart" className="position-relative nav-cart-mobile" aria-label="Cart">
+            <i className="bi bi-cart3"></i>
+            <span className="cart-badge">{count}</span>
+          </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNav"
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+        </div>
 
         <div className="collapse navbar-collapse" id="mainNav">
           <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
@@ -61,10 +70,10 @@ export default function Header() {
           <div className="nav-icons d-flex align-items-center gap-3">
             <i className="bi bi-search"></i>
             <i className="bi bi-person"></i>
-            <span className="position-relative">
+            <Link to="/cart" className="position-relative" aria-label="Cart">
               <i className="bi bi-cart3"></i>
-              <span className="cart-badge">0</span>
-            </span>
+              <span className="cart-badge">{count}</span>
+            </Link>
           </div>
         </div>
       </div>

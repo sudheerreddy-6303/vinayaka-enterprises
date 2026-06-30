@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
 const products = [
   { name: "Herbal Face Wash", price: "₹299.00", img: "prod-facewash.jpg" },
@@ -18,6 +19,7 @@ const products = [
 
 export default function FeaturedProducts() {
   const trackRef = useRef(null);
+  const { addToCart } = useCart();
 
   const scroll = (dir) => {
     if (trackRef.current) {
@@ -44,7 +46,7 @@ export default function FeaturedProducts() {
                   <div className="prod-img"><img src={`/images/${p.img}`} alt={p.name} /></div>
                   <h6>{p.name}</h6>
                   <div className="price">{p.price}</div>
-                  <a href="#" className="btn btn-brand-sm w-100">ADD TO CART</a>
+                  <button className="btn btn-brand-sm w-100" onClick={() => addToCart(p)}>ADD TO CART</button>
                 </div>
               </div>
             ))}
